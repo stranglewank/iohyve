@@ -26,6 +26,7 @@ install:: all
 	$(INSTALL) -c -m $(BINMODE) ${.OBJDIR}/$(SCRIPTS) $(BINDIR)/
 	$(INSTALL) -c ${.OBJDIR}/lib/* $(FILESDIR)/
 	$(INSTALL) -c ${.OBJDIR}/rc.d/* $(RCDIR)/
+	gzip -k $(MAN)
 	$(INSTALL) -c $(MAN).gz $(MANDIR)/
 
 .include <bsd.prog.mk>
